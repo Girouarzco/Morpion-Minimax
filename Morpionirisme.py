@@ -225,7 +225,7 @@ def minimax(grille, ordinateur, alpha, beta, profondeur):
 
 # commence la partie
 def jeu(mp, tour_ordinateur=True):
-    print("\nLe jeu commence ! \\(^ヮ^)/\n~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("\nLe jeu commence ! ")
     print(mp)
     while not partie_terminee(mp.grille):
         if tour_ordinateur:  # coup de l'ordinateur
@@ -276,16 +276,16 @@ def jeu(mp, tour_ordinateur=True):
             tour_ordinateur = not tour_ordinateur
             print("Temps de réflexion : ", time.time() - t)
         else:  # coup du joueur
-            print("\nA toi de jouer ヽ(♡‿♡)ノ \n")
-            y = int(input("Ta colonne stp (⌒_⌒;) :")) - 1
-            x = int(input("Ta ligne maintenant (つ✧ω✧)つ :")) - 1
+            print("\nA toi de jouer n")
+            y = int(input("Ta colonne stp  :")) - 1
+            x = int(input("Ta ligne maintenant  :")) - 1
             if mp.grille[x, y] is None:
                 mp.grille = applique_coup(mp.grille, [x, y, symbole_joueur])
                 print('\n')
                 print(mp)
                 tour_ordinateur = not tour_ordinateur
             else:
-                print("\nTu n'as pas le droit tricheur ((╬◣﹏◢)) rejoue!")
+                print("\nTu n'as pas le droit tricheur! rejoue!")
     if evaluation_grille(mp.grille) == 1:
         print("\nJ'ai gagné !!! 	＼(٥⁀▽⁀ )／ ")
     if evaluation_grille(mp.grille) == -1:
